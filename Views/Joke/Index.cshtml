@@ -1,0 +1,36 @@
+﻿@model BSIT.Models.Joke
+
+@{
+    ViewData["Title"] = "Random Jokes";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div style="text-align: center; margin: 50px;">
+        <h1 style="font-family: 'Arial', sans-serif; font-size: 48px; color: #007bff; font-weight: bold;">
+            @ViewData["Title"]
+        </h1>
+
+        <div style="border: 1px solid #000; padding: 20px; border-radius: 10px; display: inline-block; background-color: #f9f9f9;">
+            @if (Model != null)
+            {
+                <h2>Here's a random joke for you!</h2>
+                <p><strong>Type:</strong> <span style="font-style: italic;">@Model.type</span></p>
+                <p><strong>Setup:</strong> <span style="font-weight: bold;">@Model.setup</span></p>
+                <p><strong>Punchline:</strong> <span style="color: green; font-weight: bold;">@Model.punchline</span></p>
+                <p><strong>ID:</strong> @Model.id</p>
+            }
+            else
+            {
+                <p style="color: red; font-weight: bold;">No joke available. Please try again later.</p>
+            }
+        </div>
+    </div>
+</body>
+</html>
